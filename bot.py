@@ -9,7 +9,13 @@ OWNER_ID = 8525076444
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
+add_user(
+    user.id,
+    user.username if user.username else "NoUsername",
+    user.first_name
+)
 
+credits = get_credits(user.id)
     if user.id == OWNER_ID:
         text = (
             "👑 WELCOME OWNER!\n\n"
