@@ -1,5 +1,6 @@
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
+from database import add_user, get_credits
 import os
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
